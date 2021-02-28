@@ -35,6 +35,7 @@ namespace PracticaMenus
             this.masaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temperaturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.controlLabel4 = new System.Windows.Forms.Label();
             this.controlLabel3 = new System.Windows.Forms.Label();
             this.controlLabel2 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace PracticaMenus
             this.input4 = new System.Windows.Forms.NumericUpDown();
             this.input1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.input2)).BeginInit();
@@ -115,6 +115,16 @@ namespace PracticaMenus
             this.panel1.Size = new System.Drawing.Size(505, 123);
             this.panel1.TabIndex = 1;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.errorLabel.Location = new System.Drawing.Point(3, 110);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(29, 13);
+            this.errorLabel.TabIndex = 11;
+            this.errorLabel.Text = "Error";
+            // 
             // controlLabel4
             // 
             this.controlLabel4.AutoSize = true;
@@ -169,31 +179,59 @@ namespace PracticaMenus
             this.buttonCalc.TabIndex = 5;
             this.buttonCalc.Text = "Calcular";
             this.buttonCalc.UseVisualStyleBackColor = true;
+            this.buttonCalc.Click += new System.EventHandler(this.buttonCalc_Click);
             // 
             // input2
             // 
+            this.input2.DecimalPlaces = 2;
+            this.input2.Enabled = false;
             this.input2.Location = new System.Drawing.Point(129, 38);
+            this.input2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.input2.Name = "input2";
             this.input2.Size = new System.Drawing.Size(120, 20);
             this.input2.TabIndex = 4;
             // 
             // input3
             // 
+            this.input3.DecimalPlaces = 2;
+            this.input3.Enabled = false;
             this.input3.Location = new System.Drawing.Point(255, 38);
+            this.input3.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.input3.Name = "input3";
             this.input3.Size = new System.Drawing.Size(120, 20);
             this.input3.TabIndex = 3;
             // 
             // input4
             // 
+            this.input4.DecimalPlaces = 2;
+            this.input4.Enabled = false;
             this.input4.Location = new System.Drawing.Point(381, 38);
+            this.input4.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.input4.Name = "input4";
             this.input4.Size = new System.Drawing.Size(120, 20);
             this.input4.TabIndex = 2;
             // 
             // input1
             // 
+            this.input1.DecimalPlaces = 2;
             this.input1.Location = new System.Drawing.Point(3, 38);
+            this.input1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.input1.Name = "input1";
             this.input1.Size = new System.Drawing.Size(120, 20);
             this.input1.TabIndex = 1;
@@ -207,23 +245,14 @@ namespace PracticaMenus
             this.label1.TabIndex = 0;
             this.label1.Text = "Convertidor de longitud";
             // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.errorLabel.Location = new System.Drawing.Point(3, 110);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(29, 13);
-            this.errorLabel.TabIndex = 11;
-            this.errorLabel.Text = "Error";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 161);
+            this.ClientSize = new System.Drawing.Size(523, 165);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Convertdor";
